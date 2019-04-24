@@ -20,6 +20,7 @@ import com.muchbetter.codetest.utils.StackTraceUtil;
 import ratpack.handling.Context;
 import ratpack.handling.Handler;
 import ratpack.http.Status;
+import ratpack.registry.NotInRegistryException;
 
 /**
  * @author blues
@@ -42,6 +43,10 @@ public class BalanceHandler implements Handler {
 		try {
 			balance = balanceService.perform(ctx);
 			isSuccess = true;
+		} catch (NotInRegistryException nire) {
+			error.setResponseStatus(Status.INTERNAL_SERVER_ERROR.getCode());
+			error.setResponseText("User details are not processed correctly during Auth causing this failure!!!");
+			LOGGER.debug(StackTraceUtil.getStackTraceAsString(nire));
 		} catch (DBAccessException dbae) {
 			error.setResponseStatus(Status.INTERNAL_SERVER_ERROR.getCode());
 			error.setResponseText(

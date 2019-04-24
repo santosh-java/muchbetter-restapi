@@ -22,6 +22,7 @@ import com.muchbetter.codetest.utils.StackTraceUtil;
 import ratpack.handling.Context;
 import ratpack.handling.Handler;
 import ratpack.http.Status;
+import ratpack.registry.NotInRegistryException;
 
 /**
  * @author blues
@@ -41,6 +42,10 @@ public class SpendHandler implements Handler {
 			Transaction trans = null;
 			try {
 				trans = spendService.perform(ctx);
+			} catch (NotInRegistryException nire) {
+				error.setResponseStatus(Status.INTERNAL_SERVER_ERROR.getCode());
+				error.setResponseText("User details are not processed correctly during Auth causing this failure!!!");
+				LOGGER.debug(StackTraceUtil.getStackTraceAsString(nire));
 			} catch (UserTransactionFailedException utfe) {
 				error.setResponseStatus(Status.INTERNAL_SERVER_ERROR.getCode());
 				error.setResponseText("Transaction has failed with :" + utfe.getLocalizedMessage());
