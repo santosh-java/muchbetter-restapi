@@ -101,8 +101,8 @@ the API.
 
 >**_Included a runnable JAR file which can be used to start the Ratpack server with all the four ReST endpoints started._**
 
-> **- To run the jar please use: java -jar MuchBetterCodeTest_BasicFunctionality.jar**
+> **- To run the jar please use: _java -jar MuchBetterCodeTest_BasicFunctionality.jar_**
 
-> **- Redis DB server has to be installed for the application to run successfully at localhost and default port 6379**
+> **- Redis DB server has to be installed for the application to run successfully at _localhost_ and default port _6379_**
 
-> **- To find out the address at which the server has started, check the console logs or the log file (muchbetter_api.log) generated containing the entry similar to "Ratpack started (development) for http://localhost:60531"**
+> **- To find out the address at which the server has started, check the console logs or the log file (_muchbetter_api.log_) generated containing the entry similar to _"Ratpack started (development) for http://localhost:60531"_**
