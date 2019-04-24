@@ -98,3 +98,11 @@ perform the following operations:
 1. For all the APIs, I would like to implement HAETOAS wherever necessary so that it will be intuitive for the clients to use
 the API. 
 2. Implement pagination for /transactions API.
+
+>**_Included a runnable JAR file which can be used to start the Ratpack server with all the four ReST endpoints started._**
+
+> **- To run the jar please use: java -jar MuchBetterCodeTest_BasicFunctionality.jar**
+
+> **- Redis DB server has to be installed for the application to run successfully at localhost and default port 6379**
+
+> **- To find out the address at which the server has started, check the console logs or the log file (muchbetter_api.log) generated containing the entry similar to "Ratpack started (development) for http://localhost:60531"**
