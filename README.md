@@ -98,6 +98,7 @@ perform the following operations:
 1. For all the APIs, I would like to implement HAETOAS wherever necessary so that it will be intuitive for the clients to use
 the API. 
 2. Implement pagination for /transactions API.
+3. Need to pass in the DB details and other configuration details as configurable parameters to the application so that it would be robust. As of now, DB details are hardcoded.
 
 >**_Included a runnable JAR file which can be used to start the Ratpack server with all the four ReST endpoints started._**
 
