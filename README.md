@@ -52,7 +52,7 @@ Authentication of the passed in auth token. If the auth succeeds, then only furt
 
 1. **_/login_** : As described, a POST request to this API will create a new User with default balance. To be consistent with the user balance, I 
 added an initial Transaction for that default balance and have it updated all accorss. On Successful execution of the API, we will 
-return the newly created User details as JSON format
+return the newly created User token as JSON format
 - _Success Status_: 
   1. **201 CREATED** (As we are creating a new User every time this endpoint is hit with POST request)
 - _Failure Statuses_: 
